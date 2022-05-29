@@ -1,0 +1,57 @@
+<article>
+
+<section>
+    <div class="contentarea">
+        <h3>Multiply easy your Matrices</h3>
+        <div class="m-3">
+            <p><b>Matrix A: </b></p>
+            <p>Enter the Size</p>
+            <input type="number" min="1" value="1" [(ngModel)]="rowmatrix1"/>
+            <input type="number" min="1" value="1" [(ngModel)]="colmatrix1"/>
+        </div>
+        <div class="m-3">
+            <p>Enter the Values</p>
+            <table>
+                <tr><td>
+                   <b>A =</b>
+                </td>
+                <td>
+                    <table>
+                        <tr *ngFor="let rowname of arraycreation(rowmatrix1,'row')">
+                            <td *ngFor="let colname of arraycreation(colmatrix1, 'col')">
+                                <input [name]="'MatrixA-'+rowname+colname" type="number" value="0" />
+                            </td>
+                        </tr>
+                    </table> 
+                </td></tr>
+            </table>
+        </div>
+        <div class="m-3">
+            <p><b>Matrix B: </b></p>
+            <p>Enter the Size</p>
+            <input type="number" min="1" value="1" [(ngModel)]="rowmatrix2"/>
+            <input type="number" min="1" value="1" [(ngModel)]="colmatrix2"/>
+        </div>
+        <div class="m-3">
+            <p>Enter the Values</p>
+            <table>
+                <tr><td>
+                   <b>B =</b>
+                </td>
+                <td>
+                    <table>
+                        <tr *ngFor="let rowname of arraycreation(rowmatrix2,'row')">
+                            <td *ngFor="let colname of arraycreation(colmatrix2, 'col')">
+                                <input [name]="'MatrixB-'+rowname+colname" type="number" value="0" />
+                            </td>
+                        </tr>
+                    </table> 
+                </td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="buttonarea">
+        <button (click)="ClickMultiplyMatrices()">Multiply A and B</button>
+    </div>
+</section>
+</article>

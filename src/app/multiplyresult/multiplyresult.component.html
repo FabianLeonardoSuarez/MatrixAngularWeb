@@ -1,0 +1,51 @@
+<article>
+<section>
+    <p *ngIf="loading">Loading Operation ...</p>
+    <p *ngIf="!loading && message">{{message}}</p>
+    <div *ngIf="!loading && !!!message" class="contentarea">
+        <table>
+            <tr>
+            <td>
+               <b>C = A . B =</b>
+            </td>
+            <td>
+                <table>
+                    <tr *ngFor="let rownumber of MatrixAPI.MatrixA">
+                        <td *ngFor="let value of rownumber">
+                            <span>{{value}}</span>
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+            <td>
+               <b> . </b>
+            </td>
+            <td>
+                <table>
+                    <tr *ngFor="let rownumber of MatrixAPI.MatrixB">
+                        <td *ngFor="let value of rownumber">
+                            <span>{{value}}</span>
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+            <td>
+               <b>=</b>
+            </td>
+            <td>
+                <table>
+                    <tr *ngFor="let rownumber of MatrixC">
+                        <td *ngFor="let value of rownumber">
+                            <span>{{value}}</span>
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div class="buttonarea">
+        <button *ngIf="!loading" [routerLink]="[ '/']">Go Back</button>
+    </div>
+</section>
+</article>
